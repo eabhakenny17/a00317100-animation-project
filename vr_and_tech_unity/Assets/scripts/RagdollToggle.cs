@@ -4,17 +4,10 @@ using StarterAssets;
 
 public class RagdollToggle : MonoBehaviour
 {
-    // Drag the CharacterController here in the Inspector (it's on the character root)
     public CharacterController characterController;
-
-    // We'll fill this with every bone Rigidbody on the character
+    //array for the rigidbodies on the child bones
     private Rigidbody[] boneRigidbodies;
-
-    // Reference to the Animator that's driving the walking/idle animations
     private Animator animator;
-
-    // The ThirdPersonController must be disabled too, otherwise it keeps calling
-    // CharacterController.Move() on the disabled capsule every frame
     private ThirdPersonController thirdPersonController;
 
     private bool ragDolled;
@@ -24,21 +17,19 @@ public class RagdollToggle : MonoBehaviour
         if (characterController == null)
             characterController = GetComponent<CharacterController>();
 
-        // Find all Rigidbodies on the character and its children
+        //find all rigidbodies on the character and children (bones with rigidbodies)
         boneRigidbodies = GetComponentsInChildren<Rigidbody>();
-
-        // Grab the Animator
         animator = GetComponentInChildren<Animator>();
+        //built in script
+        thirdPersonController = GetComponent<ThirdPersonController>(); 
 
-        // Grab the ThirdPersonController (it's on this same GameObject)
-        thirdPersonController = GetComponent<ThirdPersonController>();
-
-        // Start with ragdoll OFF
+        //start with ragdoll off
         SetRagdollActive(false);
     }
 
     private void Update()
     {
+        //ragdoll is r is pressed
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
             Activate();
@@ -54,18 +45,14 @@ public class RagdollToggle : MonoBehaviour
     {
         ragDolled = isActive;
         
-        // Turn off the animator when ragdolling — animation and physics fight otherwise
+        //turn of animator when ragdolling
         if (animator != null) animator.enabled = !isActive;
 
-        // Turn off the ThirdPersonController too — while it's enabled it would keep
-        // calling Move() on the disabled capsule, spamming "CharacterController.Move
-        // called on inactive controller" every frame
+        //turn of the thirdpersoncontroller when ragdolling
         if (thirdPersonController != null) thirdPersonController.enabled = !isActive;
-
-        // Turn off the CharacterController when ragdolling — its capsule shoves the bones around otherwise
         if (characterController != null) characterController.enabled = !isActive;
 
-        // Flip every bone's kinematic state
+        //flip every bone's kinematic state
         foreach (Rigidbody rb in boneRigidbodies)
         {
             rb.isKinematic = !isActive;
