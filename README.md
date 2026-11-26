@@ -52,12 +52,24 @@ I created a blend tree for the flip animation, blending between the idle and fli
 <img width="1060" height="861" alt="image" src="https://github.com/user-attachments/assets/05dc4c8c-6768-4d3c-9164-6eb6f1970ede" />
 <img width="733" height="668" alt="image" src="https://github.com/user-attachments/assets/5c6fef4d-b8dd-4ae9-970e-b2991b396e65" />
 
+### Video of model imported into Unity:
+[!Watch the video](https://github.com/eabhakenny17/a00317100-animation-project/blob/main/videos/model_movement_in_unity.mov)
+
+### Video of wave animation in Unity:
+[!Watch the video](https://github.com/eabhakenny17/a00317100-animation-project/blob/main/videos/wave_animation_custom.mov)
+
+### Video of flip Blend Tree in Unity:
+[!Watch the video](https://github.com/eabhakenny17/a00317100-animation-project/blob/main/videos/flip_blendtree_metachannel.mov)
+
 ## Step 4: Ragdoll in Unity
 I added a ragdoll to the model. I added a Rigidbody to the required bones in Unity and set each Rigidbody to be kinematic. 
 <img width="1829" height="692" alt="image" src="https://github.com/user-attachments/assets/0fe4b5f5-6340-419a-81f1-ac538c081d6b" />
 I created a script to trigger the ragdoll if the user presses 'r'.
 <img width="675" height="1013" alt="image" src="https://github.com/user-attachments/assets/6c20db7b-a7cb-43ad-9068-46a3501173aa" />
 <img width="1545" height="484" alt="image" src="https://github.com/user-attachments/assets/05e14321-ee05-48c6-af4c-e4e8bef6c798" />
+
+### Video of ragdoll in Unity:
+[!Watch the video](https://github.com/eabhakenny17/a00317100-animation-project/blob/main/videos/flip_blendtree_metachannel.mov)
 
 ## Sources:
 https://www.youtube.com/watch?v=MF1qEhBSfq4
