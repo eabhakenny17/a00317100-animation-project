@@ -32,6 +32,10 @@ Walking animation:
 Wave animation:
 <img width="1284" height="973" alt="image" src="https://github.com/user-attachments/assets/2e6c21c2-3301-4fe6-b307-07ad410f787f" />
 
+### Video of model, rig and animation in Blender:
+[!Watch the video](https://github.com/eabhakenny17/a00317100-animation-project/blob/main/videos/blender_anim_rig.mp4)
+
+
 ## Step 3: Export model from Blender and import into Unity
 After completing the model on Blender I exported the .fbx file with textures. I used the 'Copy' option for path mode in order to ensure all textures would be exported on the model. I only exported the armature, mesh and animations.
 
